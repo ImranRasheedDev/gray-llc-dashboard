@@ -1,0 +1,63 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* ── Welcome ── */
+.dashboard__welcome {
+  margin-bottom: 4px;
+}
+
+.dashboard__welcome-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--color-text-primary);
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+
+.dashboard__welcome-sub {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--color-text-muted);
+
+  & strong {
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+}
+
+/* ── Stat Cards ── */
+.dashboard__stats {
+  display: flex;
+  gap: 20px;
+}
+
+/* ── Row layouts ── */
+.dashboard__row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── Side panel (Quick Actions + Activity) ── */
+.dashboard__side-panel {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Notifications ── */
+.dashboard__notifications {
+  width: 100%;
+}

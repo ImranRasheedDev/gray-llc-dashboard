@@ -1,0 +1,106 @@
+.sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--color-bg-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 90;
+  border-right: 1px solid var(--color-border-light);
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 0;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  font-family: var(--font-nav);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  position: relative;
+
+  &:hover {
+    color: var(--color-primary);
+    background: var(--color-orange-light);
+  }
+}
+
+.sidebar__item--active {
+  color: var(--color-primary);
+  background: var(--color-primary-gradient-subtle);
+  font-weight: 500;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-primary);
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+.sidebar__icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__label {
+  white-space: nowrap;
+}
+
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar__profile-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar__profile-name {
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-black);
+  line-height: 1.4;
+}
+
+.sidebar__profile-role {
+  font-family: var(--font-nav);
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.sidebar__logout {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  padding: 6px;
+  border-radius: 6px;
+  transition: all var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    color: var(--color-primary);
+    background: var(--color-orange-light);
+  }
+}
