@@ -1,0 +1,308 @@
+.products-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Filters ── */
+.products-filters {
+  background: var(--color-bg-white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.products-filters__search {
+  flex: 1;
+  max-width: 420px;
+}
+
+.products-filters__search .ant-input {
+  font-family: var(--font-body);
+}
+
+.products-filters__dropdowns {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.products-filters__select {
+  min-width: 155px;
+}
+
+.products-filters__select--sm {
+  min-width: 120px;
+}
+
+.products-filters__select .ant-select-selector {
+  font-family: var(--font-nav) !important;
+}
+
+.products-filters__add-btn {
+  border-radius: 12px !important;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  height: 42px !important;
+  padding: 0 20px !important;
+}
+
+/* ── Table card ── */
+.products-table-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+/* ── Toolbar ── */
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.products-toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-nav);
+  font-size: 13px;
+}
+
+.products-toolbar__left .ant-checkbox-wrapper {
+  font-family: var(--font-nav);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.products-toolbar__count {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.products-toolbar__right {
+  display: flex;
+  align-items: center;
+}
+
+.products-toolbar__delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--card-radius-sm);
+  font-family: var(--font-nav);
+  font-size: 13px;
+  color: var(--color-text-black);
+  background: var(--color-bg-white);
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    border-color: #d32f2f;
+    color: #d32f2f;
+  }
+}
+
+/* ── Table ── */
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  background: var(--color-bg-white);
+}
+
+.products-table__th {
+  text-align: left;
+  padding: 14px 16px;
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.products-table__th--check {
+  width: 56px;
+  padding-left: 20px;
+}
+
+.products-table__row {
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--duration-fast) var(--ease-smooth);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: #fafafa;
+  }
+}
+
+.products-table__td {
+  padding: 14px 16px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: var(--color-text-black);
+}
+
+.products-table__td--check {
+  width: 56px;
+  padding-left: 20px;
+}
+
+/* ── Image thumbnail ── */
+.products-table__thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--card-radius-sm);
+  background: var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.products-table__thumb-icon {
+  font-size: 20px;
+  color: var(--color-text-faint);
+}
+
+/* ── Product name ── */
+.products-table__name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* ── Price ── */
+.products-table__price {
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ── Status badges ── */
+.products-table__badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.products-table__badge--approved {
+  background: var(--color-green-light);
+  color: #388e3c;
+}
+
+.products-table__badge--pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ── Action buttons ── */
+.products-table__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.products-table__action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: all var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    background: var(--color-border-light);
+    color: var(--color-text-primary);
+  }
+}
+
+.products-table__action-btn--danger {
+  color: #d32f2f;
+
+  &:hover {
+    background: #fee2e2;
+  }
+}
+
+/* ── Pagination ── */
+.products-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-white);
+}
+
+.products-pagination__info {
+  font-family: var(--font-nav);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.products-pagination__nav {
+  display: flex;
+  gap: 4px;
+}
+
+.products-pagination__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 4px;
+  font-family: var(--font-nav);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-white);
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+
+  &:hover:not(:disabled):not(.products-pagination__btn--active) {
+    background: var(--color-bg);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.products-pagination__btn--active {
+  background: rgba(241, 117, 71, 0.1);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.products-pagination__btn--arrow {
+  font-size: 10px;
+}

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Gray LLC — a Vite + React 19 application with Ant Design (v5) for UI components and React Router DOM (v7) for routing. Currently in early setup phase; Ant Design and React Router are installed but not yet integrated.
+Gray LLC — an admin dashboard built with Vite 8 + React 19, Ant Design v5 for UI components, and React Router DOM v7 for routing. Uses `@ant-design/icons` for iconography.
 
 ## Commands
 
@@ -16,8 +16,13 @@ Gray LLC — a Vite + React 19 application with Ant Design (v5) for UI component
 ## Architecture
 
 - **Entry point**: `index.html` → `src/main.jsx` → `src/App.jsx`
-- **Styling**: Plain CSS with native nesting; CSS custom properties for theming; light/dark mode via `prefers-color-scheme`
-- **Static assets**: `public/` for unprocessed files, `src/assets/` for import-resolved files
+- **Routing**: `App.jsx` wraps the app in `<BrowserRouter>` + `<ConfigProvider>` (Ant Design theme: primary `#f17547`, Jost font, 8px border radius). Routes defined via React Router DOM v7 `<Routes>`/`<Route>`.
+- **Layout**: `src/layouts/DashboardLayout/` provides the shell (Header + Sidebar + main content area). Accepts `activeKey` prop to highlight the current sidebar nav item. Sidebar uses `<NavLink>` for client-side navigation.
+- **Pages**: `src/pages/` — each page wraps its content in `DashboardLayout` with the appropriate `activeKey`.
+- **Components**: `src/components/` — each component in its own folder with co-located `.jsx` + `.css` files (e.g., `StatCard/StatCard.jsx` + `StatCard/StatCard.css`).
+- **Design tokens**: `src/theme/variables.css` defines all CSS custom properties (brand colors, accent palette, neutrals, text colors, typography, spacing, shadows, transitions). Components reference these variables rather than hardcoded values.
+- **Styling**: Plain CSS with CSS custom properties from `variables.css`; no CSS modules or preprocessors. Global resets and Ant Design overrides live in `src/index.css`.
+- **Fonts**: Jost (headings + body) and Poppins (navigation), loaded via Google Fonts in `index.html`.
 
 ## Tooling Notes
 

@@ -7,14 +7,15 @@ import {
   LogoutOutlined,
 } from '@ant-design/icons';
 import { Avatar } from 'antd';
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
 const navItems = [
-  { key: 'dashboard', label: 'Dashboard', icon: <DashboardOutlined /> },
-  { key: 'users', label: 'Users', icon: <UserOutlined /> },
-  { key: 'products', label: 'Products', icon: <ShoppingOutlined /> },
-  { key: 'orders', label: 'Orders', icon: <ShoppingCartOutlined /> },
-  { key: 'finance', label: 'Finance Management', icon: <DollarOutlined /> },
+  { key: 'dashboard', label: 'Dashboard', icon: <DashboardOutlined />, path: '/' },
+  { key: 'users', label: 'Users', icon: <UserOutlined />, path: '/users' },
+  { key: 'products', label: 'Products', icon: <ShoppingOutlined />, path: '/products' },
+  { key: 'orders', label: 'Orders', icon: <ShoppingCartOutlined />, path: '/orders' },
+  { key: 'finance', label: 'Finance Management', icon: <DollarOutlined />, path: '/finance' },
 ];
 
 export default function Sidebar({ activeKey = 'dashboard' }) {
@@ -22,14 +23,14 @@ export default function Sidebar({ activeKey = 'dashboard' }) {
     <aside className="sidebar">
       <nav className="sidebar__nav">
         {navItems.map((item) => (
-          <a
+          <NavLink
             key={item.key}
-            href="#"
+            to={item.path}
             className={`sidebar__item ${item.key === activeKey ? 'sidebar__item--active' : ''}`}
           >
             <span className="sidebar__icon">{item.icon}</span>
             <span className="sidebar__label">{item.label}</span>
-          </a>
+          </NavLink>
         ))}
       </nav>
 
