@@ -1,0 +1,119 @@
+.content-mgmt {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Card wrapper ── */
+.content-mgmt__card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.content-mgmt__title {
+  font-family: var(--font-nav);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ── Sections ── */
+.content-mgmt__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-mgmt__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content-mgmt__section-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ── Rich text editor ── */
+.content-mgmt__editor {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.content-mgmt__editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--color-bg);
+  border-bottom: 1px solid #d1d5db;
+}
+
+.content-mgmt__toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    background: var(--color-border-light);
+    color: var(--color-text-primary);
+  }
+}
+
+.content-mgmt__toolbar-divider {
+  width: 1px;
+  height: 16px;
+  background: #d1d5db;
+  margin: 0 4px;
+}
+
+.content-mgmt__textarea {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: var(--font-heading) !important;
+  resize: none;
+}
+
+.content-mgmt__textarea:focus {
+  box-shadow: none !important;
+}
+
+/* ── Actions ── */
+.content-mgmt__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.content-mgmt__cancel-btn {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  border-radius: 4px !important;
+  min-width: 100px;
+}
+
+.content-mgmt__update-btn {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  border-radius: 6px !important;
+  min-width: 100px;
+}

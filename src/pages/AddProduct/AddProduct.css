@@ -1,0 +1,226 @@
+.add-product {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Sections ── */
+.add-product__section {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--card-radius);
+  padding: 24px;
+}
+
+.add-product__section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-text-primary);
+  margin: 0 0 24px;
+}
+
+/* ── Form grid ── */
+.add-product__form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.add-product__pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Fields ── */
+.add-product__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.add-product__form-grid .add-product__field:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2 / 4;
+}
+
+.add-product__label {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.add-product__hint {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.add-product__input {
+  font-family: var(--font-heading) !important;
+  border-radius: 8px !important;
+}
+
+.add-product__input .ant-input {
+  font-family: var(--font-heading) !important;
+}
+
+.add-product__select {
+  width: 100%;
+}
+
+.add-product__select .ant-select-selector {
+  border-radius: 8px !important;
+  font-family: var(--font-heading) !important;
+}
+
+.add-product__currency {
+  font-family: var(--font-nav);
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+/* ── Rich text editor ── */
+.add-product__editor {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.add-product__editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--color-bg);
+  border-bottom: 1px solid #d1d5db;
+}
+
+.add-product__toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    background: var(--color-border-light);
+    color: var(--color-text-primary);
+  }
+}
+
+.add-product__toolbar-divider {
+  width: 1px;
+  height: 16px;
+  background: #d1d5db;
+  margin: 0 4px;
+}
+
+.add-product__textarea {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: var(--font-heading) !important;
+  resize: none;
+}
+
+.add-product__textarea:focus {
+  box-shadow: none !important;
+}
+
+/* ── Dropzone ── */
+.add-product__dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px;
+  border: 2px dashed #d1d5db;
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}
+
+.add-product__dropzone-icon {
+  font-size: 32px;
+  color: var(--color-text-faint);
+}
+
+.add-product__dropzone-text {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.add-product__dropzone-browse {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.add-product__dropzone-hint {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Gallery slots ── */
+.add-product__gallery-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.add-product__gallery-slot {
+  width: 130px;
+  height: 130px;
+  border: 2px dashed #d1d5db;
+  border-radius: var(--card-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}
+
+.add-product__gallery-icon {
+  font-size: 16px;
+  color: var(--color-text-faint);
+}
+
+/* ── Actions ── */
+.add-product__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.add-product__cancel-btn {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  border-radius: 4px !important;
+  min-width: 100px;
+}
+
+.add-product__submit-btn {
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  border-radius: 6px !important;
+  min-width: 160px;
+}
