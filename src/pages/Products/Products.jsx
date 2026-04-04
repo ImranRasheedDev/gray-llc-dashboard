@@ -9,6 +9,7 @@ import {
   InboxOutlined,
 } from '@ant-design/icons';
 import { Input, Select, Checkbox, Button } from 'antd';
+import { Link } from 'react-router-dom';
 import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
 import './Products.css';
 
@@ -96,14 +97,16 @@ export default function Products() {
               ]}
             />
           </div>
-          <Button
-            type="primary"
-            icon={<PlusOutlined />}
-            size="large"
-            className="products-filters__add-btn"
-          >
-            Add Product
-          </Button>
+          <Link to="/products/new">
+            <Button
+              type="primary"
+              icon={<PlusOutlined />}
+              size="large"
+              className="products-filters__add-btn"
+            >
+              Add Product
+            </Button>
+          </Link>
         </div>
 
         {/* Table card */}
@@ -154,7 +157,9 @@ export default function Products() {
                     </div>
                   </td>
                   <td className="products-table__td">
-                    <span className="products-table__name">{product.name}</span>
+                    <Link to={`/products/${product.key}`} className="products-table__name-link">
+                      {product.name}
+                    </Link>
                   </td>
                   <td className="products-table__td">
                     <span className="products-table__price">{product.price}</span>
@@ -166,9 +171,9 @@ export default function Products() {
                   </td>
                   <td className="products-table__td">
                     <div className="products-table__actions">
-                      <button className="products-table__action-btn" aria-label="View">
+                      <Link to={`/products/${product.key}`} className="products-table__action-btn" aria-label="View">
                         <EyeOutlined />
-                      </button>
+                      </Link>
                       <button className="products-table__action-btn products-table__action-btn--danger" aria-label="Delete">
                         <DeleteOutlined />
                       </button>

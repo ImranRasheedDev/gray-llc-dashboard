@@ -184,10 +184,17 @@
 }
 
 /* ── Product name ── */
-.products-table__name {
+.products-table__name-link {
   font-family: var(--font-body);
   font-size: 14px;
   white-space: nowrap;
+  color: var(--color-text-black);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-smooth);
+
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 
 /* ── Price ── */

@@ -7,6 +7,10 @@ import {
 } from '@ant-design/icons';
 import { Rate } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Thumbs } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/thumbs';
 import DashboardLayout from '../../layouts/DashboardLayout/DashboardLayout';
 import './ProductDetail.css';
 
@@ -24,7 +28,7 @@ const product = {
 
 export default function ProductDetail() {
   const navigate = useNavigate();
-  const [activeThumb, setActiveThumb] = useState(0);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <DashboardLayout activeKey="products">
@@ -44,25 +48,52 @@ export default function ProductDetail() {
 
         {/* Main content */}
         <div className="product-detail__content">
-          {/* Left — Image gallery */}
+          {/* Left — Image gallery with Swiper */}
           <div className="product-detail__gallery">
-            <div className="product-detail__hero">
-              <InboxOutlined className="product-detail__hero-icon" />
-            </div>
-            <div className="product-detail__thumbs">
-              <button className="product-detail__thumb-arrow" aria-label="Previous image">
+            <Swiper
+              modules={[Navigation, Thumbs]}
+              thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+              className="product-detail__hero-swiper"
+            >
+              {product.images.map((_, i) => (
+                <SwiperSlide key={i}>
+                  <div className="product-detail__hero">
+                    <InboxOutlined className="product-detail__hero-icon" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="product-detail__thumbs-wrapper">
+              <button
+                className="product-detail__thumb-arrow product-detail__thumb-prev"
+                aria-label="Previous image"
+              >
                 <LeftOutlined />
               </button>
-              {product.images.map((_, i) => (
-                <button
-                  key={i}
-                  className={`product-detail__thumb ${i === activeThumb ? 'product-detail__thumb--active' : ''}`}
-                  onClick={() => setActiveThumb(i)}
-                >
-                  <InboxOutlined className="product-detail__thumb-icon" />
-                </button>
-              ))}
-              <button className="product-detail__thumb-arrow" aria-label="Next image">
+              <Swiper
+                modules={[Navigation]}
+                onSwiper={setThumbsSwiper}
+                slidesPerView={4}
+                spaceBetween={12}
+                navigation={{
+                  prevEl: '.product-detail__thumb-prev',
+                  nextEl: '.product-detail__thumb-next',
+                }}
+                className="product-detail__thumbs-swiper"
+              >
+                {product.images.map((_, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="product-detail__thumb">
+                      <InboxOutlined className="product-detail__thumb-icon" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <button
+                className="product-detail__thumb-arrow product-detail__thumb-next"
+                aria-label="Next image"
+              >
                 <RightOutlined />
               </button>
             </div>
